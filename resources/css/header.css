@@ -1,0 +1,12 @@
+.header-panel {
+    height: 4rem;
+    width: 100%;
+    border-bottom: 1px solid #777;
+    color: white;
+}
+
+.logo {
+    height: 3.5rem;
+
+    margin-top: 0.25rem;
+}

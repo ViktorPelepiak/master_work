@@ -1,0 +1,15 @@
+.content {
+    margin-top: 3rem;
+}
+
+.app-bg-gray {
+    background-color: #2d3748;
+}
+
+.navbar {
+    border-bottom: 1px solid #777777;
+}
+
+.page-content {
+    height: calc(100% - 50rem);
+}
