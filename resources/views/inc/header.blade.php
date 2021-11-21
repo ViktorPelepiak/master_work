@@ -6,9 +6,10 @@
             <img class="logo" src="/images/ChNU_Small_Logo.png" alt="Logo">
 
             @if(\Illuminate\Support\Facades\Auth::check())
-                <button class="btn btn-danger" onclick="logout()">LogOut</button>
+                <button class="btn btn-primary" onclick="mySurveys()">Мої опитування</button>
+                <button class="btn btn-danger" onclick="logout()">Вийти</button>
             @else
-                <button class="btn btn-primary" onclick="login()">LogIn</button>
+                <button class="btn btn-primary" onclick="login()">Увійти</button>
             @endif
         </div>
 
