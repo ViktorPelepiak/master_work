@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Str;
 
+$DATABASE_URL=parse_url(env('DATABASE_URL'));
+
 return [
 
     /*
@@ -15,7 +17,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+//    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -63,18 +66,33 @@ return [
             ]) : [],
         ],
 
+//        'pgsql' => [
+//            'driver' => 'pgsql',
+//            'url' => env('DATABASE_URL'),
+//            'host' => env('DB_HOST', '127.0.0.1'),
+//            'port' => env('DB_PORT', '5432'),
+//            'database' => env('DB_DATABASE', 'forge'),
+//            'username' => env('DB_USERNAME', 'forge'),
+//            'password' => env('DB_PASSWORD', ''),
+//            'charset' => 'utf8',
+//            'prefix' => '',
+//            'prefix_indexes' => true,
+//            'schema' => 'public',
+//            'sslmode' => 'prefer',
+//        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'url' => 'postgres://qifpzpthcodbqn:066b95581dabe8ea7e325b0f3b8d296ff3ee5276fcbb5561074353bddb60404f@ec2-54-170-163-224.eu-west-1.compute.amazonaws.com:5432/ddekh87f61hj02',
+            'host' => 'ec2-54-170-163-224.eu-west-1.compute.amazonaws.com',
+            'port' => 5432,
+            'database' => 'ddekh87f61hj02',
+            'username' => 'qifpzpthcodbqn',
+            'password' => '066b95581dabe8ea7e325b0f3b8d296ff3ee5276fcbb5561074353bddb60404f',
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'schema' => 'public',
+            'schema' => 'postgres',
             'sslmode' => 'prefer',
         ],
 
