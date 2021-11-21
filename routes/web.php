@@ -22,7 +22,6 @@ class KeyValues
     public static function getKeyValues(): array
     {
         return [
-//            'root_path' => 'http://localhost:8000'
             'root_path' => env('APP_URL')
         ];
     }
