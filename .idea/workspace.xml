@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/Profile" afterDir="false" />
+    <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="Added Profile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +195,7 @@
       <workItem from="1634469123381" duration="11138000" />
       <workItem from="1634488882492" duration="18901000" />
       <workItem from="1636644943832" duration="45556000" />
-      <workItem from="1636925283376" duration="32601000" />
+      <workItem from="1636925283376" duration="33771000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1637452036173</created>
@@ -205,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637452036173</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Profile">
+      <created>1637491753295</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637491753295</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +230,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Added Profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Profile" />
   </component>
 </project>
