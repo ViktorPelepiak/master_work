@@ -5,7 +5,8 @@ function deleteSurveyById(id) {
         type: "post",
     })
 
-    window.location.href = contextPath + "/private";
+    // window.location.href = contextPath + "/private";
+    window.location.refresh();
 }
 
 function surveyReview(id) {

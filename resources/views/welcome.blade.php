@@ -16,7 +16,7 @@
 
     <div class="page-content app-bg-dark content flex justify-center">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-            <div class="mt-8 dark:bg-gray-800 overflow-hidden">
+            <div class="mt-8 overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
                         <img class="big-logo" src="/images/ChNU_Logo.png" alt="Logo">
