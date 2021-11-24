@@ -1,14 +1,16 @@
 @extends('layout.app')
 
 @section('title')
-    New Survey
+    Створення голосування
 @endsection
 
 @include('inc.header')
 
-@section('content')
+@section('styles')
     <link rel="stylesheet" href="/css/newSurvey.css">
+@endsection
 
+@section('content')
     <div class="page-content app-bg-dark content flex justify-center">
         <form class="survey-form" method="POST" action="/surveys/create">
             @csrf
@@ -35,7 +37,7 @@
             <label for="respondents" class="survey-form-label">Респонденти</label>
             <textarea name="respondents" id="respondents" class="form-control"></textarea>
 
-            <button class="btn btn-primary new-survey-btn" type="submit">Створити Опитування</button>
+            <button class="btn btn-primary new-survey-btn" type="submit">Створити голосування</button>
         </form>
 
     </div>

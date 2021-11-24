@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Login
+    Перегляд голосування
 @endsection
 
 @include('inc.header')

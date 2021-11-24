@@ -1,30 +1,34 @@
 @extends('layout.app')
 
 @section('title')
-    Main page
+    Головна сторінка
 @endsection
 
+@section('styles')
+
+@endsection
+<link rel="stylesheet" href="/css/mainPage.css">
 @section('content')
 
 {{--    @yield('header')--}}
     @include('inc.header')
 
-    <link rel="stylesheet" href="/css/mainPage.css">
 
     <div class="page-content app-bg-dark content flex justify-center">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-            <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+            <div class="mt-8 dark:bg-gray-800 overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
-                        <img class="big_logo" src="/images/ChNU_Logo.png" alt="Logo">
+                        <img class="big-logo" src="/images/ChNU_Logo.png" alt="Logo">
                     </div>
 
                     <div class="p-6">
+                        <div style="display: flex; align-items: center; height: 100%; min-width: 22rem;">
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <button class="btn btn-primary" onclick="mySurveys()">Мої опитування</button>
                         @else
-                            <div class="page-content app-bg-dark content flex justify-center">
-                                <form class="registration-login-form" method="POST" action="{{route('user.login')}}">
+                            <div class="flex justify-center" style="width: 100%">
+                                <form class="registration-login-form" style="width: 100%; margin-right: 4rem;" method="POST" action="{{route('user.loginFromMainPage')}}">
                                     @csrf
                                     <div class="form-group">
                                         <label for="email" class="col-form-label-lg">Ваш email</label>
@@ -48,6 +52,7 @@
                                 </form>
                             </div>
                         @endif
+                        </div>
                     </div>
                 </div>
             </div>

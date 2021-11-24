@@ -3,7 +3,7 @@
     <input id="loggedUserId" hidden type="text" value="{{ \Illuminate\Support\Facades\Auth::id() }}">
 
     <div class="navbar fixed-top navbar-dark app-bg-gray">
-        <img class="logo" src="/images/ChNU_Small_Logo.png" alt="Logo">
+        <a href="{{route('root')}}"><img class="logo" src="/images/ChNU_Small_Logo.png" alt="Logo"></a>
 
         @if(\Illuminate\Support\Facades\Auth::check())
             <div style="display: flex">

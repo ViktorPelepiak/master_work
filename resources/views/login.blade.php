@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Login
+    Вхід
 @endsection
 
 @include('inc.header')

@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    My Surveys
+    Мої голосування
 @endsection
 
 @include('inc.header')

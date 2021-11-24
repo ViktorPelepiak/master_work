@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-    Registration
+    Реєстрація
 @endsection
 
 @include('inc.header')

@@ -22,4 +22,20 @@ class LoginController extends Controller
             'email' => 'Wrong login or password'
         ]);
     }
+
+    public function loginFromMainPage(Request $request){
+        if (Auth::check()){
+            return redirect()->to(route('user.private'));
+        }
+
+        $formFields = $request->only(['email', 'password']);
+
+        if (Auth::attempt($formFields)){
+            return redirect()->intended(route('user.private'));
+        }
+
+        return redirect(route('root'))->withErrors([
+            'email' => 'Хибна адреса пошти або пароль'
+        ]);
+    }
 }

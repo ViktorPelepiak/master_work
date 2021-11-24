@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
+<html class="app-bg-dark app-text-color" lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,10 +27,11 @@
         }
     </style>
 
+    <?php echo $__env->yieldContent('styles'); ?>
 
     <title><?php echo $__env->yieldContent('title'); ?></title>
 </head>
-<body class="antialiased bg-gray-100 dark:bg-gray-900">
+<body class="antialiased bg-gray-100 app-bg-dark app-text-color">
     <?php echo $__env->yieldContent('header'); ?>
     <?php echo $__env->yieldContent('content'); ?>
 </body>

@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-    My Surveys
+    Мої голосування
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('inc.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

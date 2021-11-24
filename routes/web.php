@@ -28,7 +28,7 @@ class KeyValues
 }
 Route::get('/', function () {
     return view('welcome', KeyValues::getKeyValues());
-});
+})->name('root');
 
 Route::name('user.')->group(function (){
     Route::view('/private', 'private', KeyValues::getKeyValues())->middleware('auth')->name('private');
@@ -41,6 +41,8 @@ Route::name('user.')->group(function (){
     })->name('login');
 
     Route::post('/login', [LoginController::class, 'login']);
+
+    Route::post('/loginFromMainPage', [LoginController::class, 'loginFromMainPage'])->name('loginFromMainPage');
 
     Route::get('/logout', function (){
         Auth::logout();

@@ -86,10 +86,14 @@ class SurveyController extends Controller
     public function getSurveyInfoByToken($token) {
         $surveyIdAndRespondentEmail = explode(";", base64_decode($token));
 
+        if (count(Respondent::where('survey_id', $surveyIdAndRespondentEmail[0])
+            ->where('email', $surveyIdAndRespondentEmail[1])->get()) == 0) {
+            return view('error', ['errorMessage' => 'Вибачте, але голосування не дійсне або видалено адміністратором.', 'root_path' => KeyValues::getKeyValues()['root_path']]);
+        }
+
         $respondent = new Respondent();
         $respondent = $respondent->where('survey_id', $surveyIdAndRespondentEmail[0])
                                  ->where('email', $surveyIdAndRespondentEmail[1])->get()[0];
-
 
         date_default_timezone_set('Europe/Kiev');
         $dataAndTime = explode('T', date(DATE_ATOM, microtime(true)));
