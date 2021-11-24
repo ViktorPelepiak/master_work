@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,7 @@
       <workItem from="1634488882492" duration="18901000" />
       <workItem from="1636644943832" duration="45556000" />
       <workItem from="1636925283376" duration="33771000" />
-      <workItem from="1637774929419" duration="1000000" />
+      <workItem from="1637774929419" duration="2045000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1637452036173</created>
@@ -142,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637510243960</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- Updated background color&#10;- Updated &quot;my voting&quot; button sizes&#10;- Created style file for main page">
+      <created>1637776312486</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637776312486</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +172,7 @@
     <MESSAGE value="update DB configuration" />
     <MESSAGE value="Added button for routing to survey list" />
     <MESSAGE value="Hotfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hotfix" />
+    <MESSAGE value="- Updated background color&#10;- Updated &quot;my voting&quot; button sizes&#10;- Created style file for main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Updated background color&#10;- Updated &quot;my voting&quot; button sizes&#10;- Created style file for main page" />
   </component>
 </project>
