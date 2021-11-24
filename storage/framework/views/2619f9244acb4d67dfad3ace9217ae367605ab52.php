@@ -23,7 +23,7 @@
                     <div class="p-6">
                         <div style="display: flex; align-items: center; height: 100%; min-width: 22rem;">
                         <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
-                            <button class="btn btn-primary" onclick="mySurveys()">Мої опитування</button>
+                            <button class="btn btn-primary" onclick="mySurveys()">Мої голосування</button>
                         <?php else: ?>
                             <div class="flex justify-center" style="width: 100%">
                                 <form class="registration-login-form" style="width: 100%; margin-right: 4rem;" method="POST" action="<?php echo e(route('user.loginFromMainPage')); ?>">

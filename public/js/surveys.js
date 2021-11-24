@@ -3,10 +3,9 @@ function deleteSurveyById(id) {
     $.ajax({
         url: contextPath + "/survey/delete/" + id,
         type: "post",
-    })
-
-    // window.location.href = contextPath + "/private";
-    window.location.refresh();
+    }).done(function (data) {
+        window.location.refresh();
+    });
 }
 
 function surveyReview(id) {

@@ -7,7 +7,7 @@
 
         @if(\Illuminate\Support\Facades\Auth::check())
             <div style="display: flex">
-                <button class="btn btn-primary btn-my-voting" onclick="mySurveys()">Мої опитування</button>
+                <button class="btn btn-primary btn-my-voting" onclick="mySurveys()">Мої голосування</button>
                 <button class="btn btn-danger" onclick="logout()">Вийти</button>
             </div>
         @else

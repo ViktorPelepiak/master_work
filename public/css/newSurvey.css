@@ -33,3 +33,11 @@
     margin-top: 1.25rem;
     margin-left: 1rem;
 }
+
+#respondents {
+    min-height: 15rem;
+}
+
+.required {
+    color: orangered;
+}

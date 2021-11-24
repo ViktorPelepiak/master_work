@@ -15,6 +15,7 @@ class VerifyCsrfToken extends Middleware
         '/survey/delete/*',
 
         '/login',
+        '/loginFromMainPage',
         '/registration',
         '/surveys/create',
         '/surveys/vote'

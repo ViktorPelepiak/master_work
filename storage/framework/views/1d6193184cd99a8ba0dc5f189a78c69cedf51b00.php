@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/mySurveys.css">
 
     <div class="page-content app-bg-dark flex content justify-center">
-        <p class="my-surveys-title">Мої Опитування</p>
+        <p class="my-surveys-title">Мої голосування</p>
     </div>
     <div class="app-bg-dark flex content justify-center">
         <div id="survey_container" class="survey-container">
