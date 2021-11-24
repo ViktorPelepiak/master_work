@@ -7,7 +7,11 @@
 }
 
 .app-bg-dark {
-    background-color: #1a202c;
+    background-color: #1a202c !important;
+}
+
+.app-text-color {
+    color: whitesmoke;
 }
 
 .navbar {

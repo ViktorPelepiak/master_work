@@ -30,7 +30,7 @@
 
     <title>@yield('title')</title>
 </head>
-<body class="antialiased bg-gray-100 dark:bg-gray-900">
+<body class="antialiased bg-gray-100 app-bg-dark app-text-color">
     @yield('header')
     @yield('content')
 </body>
