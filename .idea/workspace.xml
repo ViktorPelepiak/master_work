@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="- Updated main page&#10;- Changer refresh method after deleting the voting">
+    <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/AnswerVariant.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_11_25_112105_create_answer_variants_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/voting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d50f15a4-4136-4f72-8893-2374fd8d7dfb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d50f15a4-4136-4f72-8893-2374fd8d7dfb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/displaySurveys.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/displaySurveys.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/mainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mainPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/newSurvey.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/newSurvey.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/newSurvey.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/newSurvey.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/surveys.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/surveys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/statistic.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/statistic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/voting.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/voting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/addNewSurvey.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/addNewSurvey.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/private.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/private.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/surveyReview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/surveyReview.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/voting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/voting.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/0309b358e5a5057617c116822db502f852a091a3.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0309b358e5a5057617c116822db502f852a091a3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/1d6193184cd99a8ba0dc5f189a78c69cedf51b00.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/1d6193184cd99a8ba0dc5f189a78c69cedf51b00.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/1c3d31328ddd3e764430752213d085ca8435f48a.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/1c3d31328ddd3e764430752213d085ca8435f48a.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/2619f9244acb4d67dfad3ace9217ae367605ab52.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/2619f9244acb4d67dfad3ace9217ae367605ab52.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/42abe2cedbb91789ed41be87a77fef05198b8355.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/42abe2cedbb91789ed41be87a77fef05198b8355.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/cda0184ab9faff31e1cced506e5376d7fed65b32.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/cda0184ab9faff31e1cced506e5376d7fed65b32.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +178,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -210,7 +221,7 @@
       <workItem from="1636644943832" duration="45556000" />
       <workItem from="1636925283376" duration="33771000" />
       <workItem from="1637774929419" duration="4166000" />
-      <workItem from="1637779151254" duration="12745000" />
+      <workItem from="1637779151254" duration="50089000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1637452036173</created>
@@ -289,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637788571900</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Added validation for the voting creating on UI&#10;- Fixed defect with reloadiing after removing the voting">
+      <created>1637797034824</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1637797034824</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +336,7 @@
     <MESSAGE value="- Updated main page" />
     <MESSAGE value="- Updated main page&#10;- Updated titles&#10;- Added checking for existing of the survey" />
     <MESSAGE value="- Updated main page&#10;- Changer refresh method after deleting the voting" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Updated main page&#10;- Changer refresh method after deleting the voting" />
+    <MESSAGE value="- Added validation for the voting creating on UI&#10;- Fixed defect with reloadiing after removing the voting" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added validation for the voting creating on UI&#10;- Fixed defect with reloadiing after removing the voting" />
   </component>
 </project>

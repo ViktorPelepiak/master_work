@@ -7,7 +7,7 @@
 @include('inc.header')
 
 @section('content')
-
+    <link rel="stylesheet" href="/css/voting.css">
 
     <div class="page-content app-bg-dark content flex justify-center">
         <form class="registration-login-form" method="POST" action="{{route('vote')}}">
@@ -18,21 +18,14 @@
 
             <input type="hidden" id="survey_id" name="survey_id" value="{{ $survey->id }}">
             <input type="hidden" id="email" name="email" value="{{ $respondent->email }}">
+            <input type="hidden" id="answerVariantList" value="{{ $answer_variants }}">
+
+            <div id="answerVariants"></div>
+
+            <input type="hidden" id="answer" name="answer" value="-1">
 
             <div class="form-group">
-                <input id="answer_yes" name="answer" type="radio" value="" onclick="changeValue()">
-                <label for="answer_yes" class="col-form-label-lg">За</label>
-            </div>
-
-            <div class="form-group">
-                <input id="answer_no" name="answer" type="radio" value="" onclick="changeValue()">
-                <label for="answer_no" class="col-form-label-lg">Проти</label>
-            </div>
-
-            <input type="hidden" id="answer" name="answer" value="NOT_VOTED">
-
-            <div class="form-group">
-                <button class="btn btn-submit-registration-login btn-lg btn-primary" type="submit" name="sendMe" value="1">Увійти</button>
+                <button id="voteBtn" class="btn btn-submit-registration-login btn-lg btn-primary" type="submit" name="sendMe" value="1" disabled>Зберегти голос</button>
             </div>
         </form>
     </div>

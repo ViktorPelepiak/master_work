@@ -1,3 +1,9 @@
+var answers = ['Погоджуюся', 'Не погоджуюся'];
+
+window.onload = function () {
+    displayAnswerContainer();
+}
+
 function toCreateNewSurveyPage() {
     window.location=contextPath + "/surveys/new";
 }
@@ -22,7 +28,6 @@ function validateRespondents() {
     }
     return true;
 }
-
 
 function validateForm() {
     var question = document.getElementById("question");
@@ -64,5 +69,90 @@ function validateForm() {
         document.getElementById("saveVoting").disabled = false;
     } else {
         document.getElementById("saveVoting").disabled = true;
+    }
+}
+
+function displayAnswerContainer() {
+    var answersContainer = document.getElementById("answerVariants");
+    document.getElementById("answerVariantList").value = answers;
+
+    answersContainer.innerHTML = "";
+
+    for (let i = 0; i < answers.length; i++) {
+        var answerVariantContainer = document.createElement("div");
+        answerVariantContainer.classList.add("answer-variant-container");
+        answerVariantContainer.id = "answerVariantContainer" + i;
+        answersContainer.appendChild(answerVariantContainer);
+
+        var fakeRadio = document.createElement("input");
+        fakeRadio.type = "radio";
+        fakeRadio.disabled = true;
+        fakeRadio.classList.add("form-check");
+        fakeRadio.classList.add("fake-radio");
+        answerVariantContainer.appendChild(fakeRadio);
+
+        var answerVariantInput = document.createElement("input");
+        answerVariantInput.type = "text";
+        answerVariantInput.disabled = true;
+        answerVariantInput.classList.add("form-control");
+        answerVariantInput.classList.add("answer-variant");
+        answerVariantInput.value = answers[i];
+        answerVariantContainer.appendChild(answerVariantInput);
+
+        var editAnswerVariantBtn = document.createElement("button");
+        editAnswerVariantBtn.type = "button";
+        editAnswerVariantBtn.classList.add("btn");
+        editAnswerVariantBtn.classList.add("btn-primary");
+        editAnswerVariantBtn.classList.add("btn-edit-answer-variant");
+        editAnswerVariantBtn.onclick = function () {prepareEditAnswerVariantModal(i)};
+        editAnswerVariantBtn.innerText = "Редагувати";
+        editAnswerVariantBtn.setAttribute("data-toggle", "modal");
+        editAnswerVariantBtn.setAttribute("data-target", "#editAnswerModal");
+        answerVariantContainer.appendChild(editAnswerVariantBtn);
+
+        var deleteAnswerVariantBtn = document.createElement("button");
+        deleteAnswerVariantBtn.classList.add("btn");
+        deleteAnswerVariantBtn.classList.add("btn-danger");
+        deleteAnswerVariantBtn.classList.add("btn-remove-answer-variant");
+        deleteAnswerVariantBtn.onclick = function () {deleteAnswerVariant(i)};
+        deleteAnswerVariantBtn.innerText = "Видалити";
+        if (answers.length > 2) {
+            deleteAnswerVariantBtn.disabled = false;
+        } else {
+            deleteAnswerVariantBtn.disabled = true;
+        }
+        answerVariantContainer.appendChild(deleteAnswerVariantBtn);
+    }
+}
+
+function deleteAnswerVariant(index) {
+    answers.splice(index, 1);
+    displayAnswerContainer();
+}
+
+function prepareAddAnswerVariantModal() {
+    document.getElementById("newAnswerVariantInput").value = "";
+}
+
+function addAnswerVariant() {
+    var newAnswerVariant = document.getElementById("newAnswerVariantInput").value;
+    if (newAnswerVariant.length > 0){
+        answers.push(newAnswerVariant);
+        displayAnswerContainer();
+    }
+}
+
+function prepareEditAnswerVariantModal(index) {
+    document.getElementById("index").value = index;
+    document.getElementById("editAnswerVariantInput").value = answers[index];
+}
+
+function editAnswerVariant() {
+    var index = parseInt(document.getElementById("index").value);
+    var newAnswer = document.getElementById("editAnswerVariantInput").value;
+
+    if (newAnswer.length > 0) {
+        answers.splice(index, 1, newAnswer);
+        displayAnswerContainer();
     }
 }

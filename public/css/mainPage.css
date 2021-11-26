@@ -1,3 +1,11 @@
 .big-logo {
     width: 15rem;
 }
+
+.btn-main-page {
+    width: 20rem !important;
+    height: 3rem !important;
+    font-size: 1.5rem !important;
+
+    margin: 1rem;
+}

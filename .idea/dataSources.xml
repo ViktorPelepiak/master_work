@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/voting_service</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="ddekh87f61hj02@ec2-54-170-163-224.eu-west-1.compute.amazonaws.com" uuid="8569d173-5b01-46b5-a954-556f9fa89ef7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-170-163-224.eu-west-1.compute.amazonaws.com:5432/ddekh87f61hj02</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

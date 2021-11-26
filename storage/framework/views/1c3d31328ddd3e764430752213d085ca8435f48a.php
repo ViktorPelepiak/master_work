@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-    Login
+    Перегляд голосування
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('inc.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -13,6 +13,13 @@
                 <label for="question">Питання</label>
                 <h3 id="question"><?php echo e($question); ?></h3>
             </div>
+
+            <div class="content-block">
+                <input id="answerVariantsInput" type="hidden" value="<?php echo e($answerVariants); ?>">
+                <label for="answerVariants">Варіанти відповіді</label>
+                <div id="answerVariants"></div>
+            </div>
+
             <div class="content-block flex-container">
                 <h5>Доступне від&nbsp;</h5><?php echo e($timeOfStart); ?> <h5>&nbsp;до&nbsp;</h5><?php echo e($timeOfFinish); ?>
 
@@ -35,11 +42,10 @@
                     <?php endif; ?>
                 </h5>
             </div>
-            <?php if($reviewInProcess): ?>
+            <?php if($canReviewResults): ?>
             <div class="content-block flex-container">
-                <input id="agreeQuantity" type="hidden" value="<?php echo e($agreeQuantity); ?>">
-                <input id="disagreeQuantity" type="hidden" value="<?php echo e($disagreeQuantity); ?>">
-                <input id="notVotedQuantity" type="hidden" value="<?php echo e($totalQuantity - $agreeQuantity - $disagreeQuantity); ?>">
+                <input id="answerVariantsArray" type="hidden" value="<?php echo e($answerVariants); ?>">
+                <input id="answerQuantities" type="hidden" value="<?php echo e($answerQuantities); ?>">
 
                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
             </div>

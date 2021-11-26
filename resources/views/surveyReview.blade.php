@@ -15,6 +15,13 @@
                 <label for="question">Питання</label>
                 <h3 id="question">{{ $question }}</h3>
             </div>
+
+            <div class="content-block">
+                <input id="answerVariantsInput" type="hidden" value="{{ $answerVariants }}">
+                <label for="answerVariants">Варіанти відповіді</label>
+                <div id="answerVariants"></div>
+            </div>
+
             <div class="content-block flex-container">
                 <h5>Доступне від&nbsp;</h5>{{ $timeOfStart }} <h5>&nbsp;до&nbsp;</h5>{{ $timeOfFinish }}
             </div>
@@ -36,11 +43,10 @@
                     @endif
                 </h5>
             </div>
-            @if($reviewInProcess)
+            @if($canReviewResults)
             <div class="content-block flex-container">
-                <input id="agreeQuantity" type="hidden" value="{{ $agreeQuantity }}">
-                <input id="disagreeQuantity" type="hidden" value="{{ $disagreeQuantity }}">
-                <input id="notVotedQuantity" type="hidden" value="{{ $totalQuantity - $agreeQuantity - $disagreeQuantity }}">
+                <input id="answerVariantsArray" type="hidden" value="{{ $answerVariants }}">
+                <input id="answerQuantities" type="hidden" value="{{ $answerQuantities }}">
 
                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
             </div>

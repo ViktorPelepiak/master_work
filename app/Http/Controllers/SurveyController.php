@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\SurveyMail;
 use App\Models\Answer;
+use App\Models\AnswerVariant;
 use App\Models\Contact;
 use App\Models\Respondent;
 use App\Models\Survey;
@@ -22,13 +23,15 @@ class SurveyController extends Controller
                 'datatime_from'=>'required',
                 'datatime_to'=>'required',
                 'reviewInProgressInput'=>'required',
-                'respondents'=>'required'
+                'respondents'=>'required',
+                'answerVariantList'=>'required'
             ]);
 
             $dateAndTime = explode('T', $validateFields['datatime_from']);
             $timeFrom = $dateAndTime[0]." ".$dateAndTime[1];
             $dateAndTime = explode('T', $validateFields['datatime_to']);
             $timeTo = $dateAndTime[0]." ".$dateAndTime[1];
+            $answerVariantList = explode(',', $validateFields['answerVariantList']);
 
             $data = array(
                 'user_id'=>$validateFields['userId'],
@@ -39,6 +42,19 @@ class SurveyController extends Controller
             );
 
             $survey_id = Survey::create($data)->id;
+
+            $i = 0;
+            foreach ($answerVariantList as $answer) {
+                $data = array(
+                    'survey_id'=>$survey_id,
+                    'order_number'=>$i,
+                    'answer_variant'=>$answer
+                );
+
+                $answerVariant = AnswerVariant::create($data);
+
+                $i++;
+            }
 
             $emails = preg_split('[\s]', $validateFields['respondents'], 0, PREG_SPLIT_NO_EMPTY);
 
@@ -100,17 +116,36 @@ class SurveyController extends Controller
         $time = explode(':', $dataAndTime[1]);
         $currentTime = $dataAndTime[0].' '.$time[0].':'.$time[1];
 
+        $answerVariants = "";
+        foreach (AnswerVariant::where("survey_id", $surveyIdAndRespondentEmail[0])->get() as $answerVariant) {
+            $answerVariants = $answerVariants.$answerVariant->answer_variant.",";
+        }
+
         if ($respondent->is_voted) {
-            return view('error', ['errorMessage' => 'Вибачте, але ви вже проголосували.', 'root_path'=>KeyValues::getKeyValues()['root_path']]);
+            return view('error', [
+                'errorMessage' => 'Вибачте, але ви вже проголосували.',
+                'root_path'=>KeyValues::getKeyValues()['root_path']
+            ]);
         } else {
             $survey = Survey::where('id',$surveyIdAndRespondentEmail[0])->get()[0];
 
             if ($survey->time_of_start > $currentTime) {
-                return view('error', ['errorMessage' => 'Голосування ще не розпочалося, спробуйте пізніше', 'root_path'=>KeyValues::getKeyValues()['root_path']]);
+                return view('error', [
+                    'errorMessage' => 'Голосування ще не розпочалося, спробуйте пізніше',
+                    'root_path'=>KeyValues::getKeyValues()['root_path']
+                ]);
             } elseif ($survey->time_of_finish < $currentTime) {
-                return view('error', ['errorMessage' => 'Вибачте, але голосування вже завершено.', 'root_path'=>KeyValues::getKeyValues()['root_path']]);
+                return view('error', [
+                    'errorMessage' => 'Вибачте, але голосування вже завершено.',
+                    'root_path'=>KeyValues::getKeyValues()['root_path']
+                ]);
             } else {
-                return view('voting', ['survey' => $survey, 'respondent'=>$respondent, 'root_path'=>KeyValues::getKeyValues()['root_path']]);
+                return view('voting', [
+                    'survey' => $survey,
+                    'respondent' => $respondent,
+                    'answer_variants' => rtrim($answerVariants, ","),
+                    'root_path' => KeyValues::getKeyValues()['root_path']
+                ]);
             }
         }
     }
@@ -161,20 +196,38 @@ class SurveyController extends Controller
         $survey = Survey::find($id);
 
         $totalQuantity = Respondent::where('survey_id', $id)->count();
-        $agreeQuantity = Answer::where('survey_id', $id)->where('value', 'YES')->count();
-        $disagreeQuantity = Answer::where('survey_id', $id)->where('value', 'NO')->count();
         $respondents = Respondent::where('survey_id', $id)->get('email');
+        $answerVariants = AnswerVariant::where('survey_id', $id)->orderBy('order_number', 'asc')->get();
+        $answerVariantValues = "Не проголосувало";
+        $answers = "";
+        $votedQuantity = 0;
+        foreach ($answerVariants as $variant) {
+            $answerVariantValues = $answerVariantValues.",".$variant->answer_variant;
+            $tempVotesQuantity = Answer::where('survey_id', $id)->where('value', $variant->order_number)->count();
+            $answers = $answers.",".$tempVotesQuantity;
+            $votedQuantity += $tempVotesQuantity;
+        }
+        $answers = ($totalQuantity - $votedQuantity).$answers;
+
+        date_default_timezone_set('Europe/Kiev');
+        $dataAndTime = explode('T', date(DATE_ATOM, microtime(true)));
+        $time = explode(':', $dataAndTime[1]);
+
+        $canReviewResults = $survey->review_in_process
+        or $survey->time_of_finish < $dataAndTime[0].' '.$time[0].':'.$time[1]
+        or $totalQuantity == $votedQuantity;
+
 
         $data = [
             'question'=>$survey->question,
             'timeOfStart'=>$survey->time_of_start,
             'timeOfFinish'=>$survey->time_of_finish,
             'reviewInProcess'=>$survey->review_in_process,
-            'totalQuantity'=>$totalQuantity,
-            'agreeQuantity'=>$agreeQuantity,
-            'disagreeQuantity'=>$disagreeQuantity,
             'respondents'=>$respondents,
-            'root_path'=>KeyValues::getKeyValues()['root_path']
+            'root_path'=>KeyValues::getKeyValues()['root_path'],
+            'answerVariants'=>$answerVariantValues,
+            'answerQuantities'=>$answers,
+            'canReviewResults'=>$canReviewResults
         ];
 
         return view('surveyReview', $data);

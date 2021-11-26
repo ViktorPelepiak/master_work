@@ -18,3 +18,26 @@
 .flex-container {
     display: flex;
 }
+
+
+#answerVariants {
+    display: block;
+}
+
+.answer-variant {
+    width: 95%;
+
+    margin-right: 1rem;
+}
+
+.answer-variant-container {
+    padding-top: 1rem;
+
+    display: flex;
+}
+
+.fake-radio {
+    width: 2rem;
+    margin-top: 0.3rem;
+    margin-right: 1rem;
+}
