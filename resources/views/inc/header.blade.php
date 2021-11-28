@@ -5,8 +5,13 @@
     <div class="navbar fixed-top navbar-dark app-bg-gray">
         <a href="{{route('root')}}"><img class="logo" src="/images/ChNU_Small_Logo.png" alt="Logo"></a>
 
+        <div class="app-name">{{ env('APP_NAME') }}</div>
+
         @if(\Illuminate\Support\Facades\Auth::check())
             <div style="display: flex">
+                @if(\App\Models\User::find(\Illuminate\Support\Facades\Auth::id())->role == 'SUPER_ADMIN')
+                    <button class="btn btn-primary btn-my-voting" onclick="userManagement()">Користувачі</button>
+                @endif
                 <button class="btn btn-primary btn-my-voting" onclick="mySurveys()">Мої голосування</button>
                 <button class="btn btn-danger" onclick="logout()">Вийти</button>
             </div>

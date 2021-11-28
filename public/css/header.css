@@ -6,7 +6,7 @@
 }
 
 .logo {
-    height: 3.5rem;
+    height: 4rem;
 
     margin-top: 0.25rem;
     margin-left: 2rem;
@@ -19,4 +19,10 @@
 
 .btn-my-voting {
     width: 10rem;
+}
+
+.app-name{
+    margin-right: auto;
+    margin-left: 2rem;
+    font-size: 3rem;
 }

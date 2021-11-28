@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SurveyMail extends Mailable
+class AdminMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,6 +29,6 @@ class SurveyMail extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->details['subject'])->view('emails.newVoteMail');
+        return $this->subject($this->details['subject'])->view('emails.newAdminMail');
     }
 }

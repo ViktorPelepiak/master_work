@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Mail\SurveyMail;
 use App\Models\Answer;
 use App\Models\AnswerVariant;
-use App\Models\Contact;
 use App\Models\Respondent;
 use App\Models\Survey;
 use Illuminate\Http\Request;
@@ -69,7 +68,9 @@ class SurveyController extends Controller
 
                 $details = [
                     'subject' => 'Запрошення до голосування',
-                    'body' => base64_encode($survey_id.';'.$respondent->email)
+                    'token' => base64_encode($survey_id.';'.$respondent->email),
+                    'datetime_of_start' => $timeFrom,
+                    'datetime_of_finish' => $timeTo
                 ];
                 Mail::to($respondent->email)->send(new SurveyMail($details));
             }
@@ -187,6 +188,10 @@ class SurveyController extends Controller
         $respondentsForDeleting = Respondent::where('survey_id',(int)$id)->get();
         foreach ($respondentsForDeleting as $respondent) {
             $respondent->delete();
+        }
+        $answerVariantForDeleting = AnswerVariant::where('survey_id',(int)$id)->get();
+        foreach ($answerVariantForDeleting as $answerVariant) {
+            $answerVariant->delete();
         }
         Survey::find($id)->delete();
         return redirect(\route('user.private'));

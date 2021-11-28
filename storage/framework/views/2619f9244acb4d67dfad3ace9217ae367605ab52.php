@@ -25,6 +25,9 @@
                         <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
                             <div style="display: block">
                                 <button class="btn btn-primary btn-main-page" onclick="mySurveys()">Мої голосування</button>
+                                <?php if(\App\Models\User::find(\Illuminate\Support\Facades\Auth::id())->role == 'SUPER_ADMIN'): ?>
+                                    <button class="btn btn-primary btn-main-page" onclick="userManagement()">Управління користувачами</button>
+                                <?php endif; ?>
                             </div>
                         <?php else: ?>
                             <div class="flex justify-center" style="width: 100%">
@@ -32,7 +35,7 @@
                                     <?php echo csrf_field(); ?>
                                     <div class="form-group">
                                         <label for="email" class="col-form-label-lg">Ваш email</label>
-                                        <input class="form-control" id="email" name="email" type="text" value="" placeholder="Email">
+                                        <input class="form-control" id="email" name="email" type="email" value="" placeholder="Email">
                                         <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

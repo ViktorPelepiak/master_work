@@ -27,6 +27,9 @@
                         @if(\Illuminate\Support\Facades\Auth::check())
                             <div style="display: block">
                                 <button class="btn btn-primary btn-main-page" onclick="mySurveys()">Мої голосування</button>
+                                @if(\App\Models\User::find(\Illuminate\Support\Facades\Auth::id())->role == 'SUPER_ADMIN')
+                                    <button class="btn btn-primary btn-main-page" onclick="userManagement()">Управління користувачами</button>
+                                @endif
                             </div>
                         @else
                             <div class="flex justify-center" style="width: 100%">
@@ -34,7 +37,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="email" class="col-form-label-lg">Ваш email</label>
-                                        <input class="form-control" id="email" name="email" type="text" value="" placeholder="Email">
+                                        <input class="form-control" id="email" name="email" type="email" value="" placeholder="Email">
                                         @error('email')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror

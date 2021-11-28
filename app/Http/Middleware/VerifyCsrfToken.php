@@ -18,6 +18,10 @@ class VerifyCsrfToken extends Middleware
         '/loginFromMainPage',
         '/registration',
         '/surveys/create',
-        '/surveys/vote'
+        '/surveys/vote',
+
+        '/admin/user/disable/*',
+        '/admin/user/enable/*',
+        '/admin/user/delete/*'
     ];
 }

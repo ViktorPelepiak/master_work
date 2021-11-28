@@ -10,7 +10,7 @@
         <?php echo csrf_field(); ?>
         <div class="form-group">
             <label for="email" class="col-form-label-lg">Ваш email</label>
-            <input class="form-control" id="email" name="email" type="text" value="" placeholder="Email">
+            <input class="form-control" id="email" name="email" type="email" value="" placeholder="Email">
             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

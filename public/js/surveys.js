@@ -4,7 +4,7 @@ function deleteSurveyById(id) {
         url: contextPath + "/survey/delete/" + id,
         type: "post",
     }).done(function (data) {
-        window.location.refresh();
+        document.location.reload();
     });
 }
 

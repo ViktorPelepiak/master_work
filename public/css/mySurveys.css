@@ -14,7 +14,7 @@
 }
 
 .my-surveys-title {
-
+    font-size: 2.5rem;
 }
 
 .new-survey-btn {
@@ -41,6 +41,7 @@
 }
 
 .surveys-not-exist {
-    width: 100%;
+    width: 80%;
     text-align: center;
+    margin: auto;
 }

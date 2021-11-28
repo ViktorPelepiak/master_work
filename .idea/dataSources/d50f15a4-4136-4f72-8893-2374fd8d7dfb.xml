@@ -1394,33 +1394,45 @@ tokenable_id</ColNames>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="375" parent="294" name="email_verified_at">
+    <column id="375" parent="294" name="role">
       <Position>4</Position>
-      <DataType>timestamp|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;ADMIN&apos;</DefaultExpression>
     </column>
-    <column id="376" parent="294" name="remember_token">
+    <column id="376" parent="294" name="enable">
       <Position>5</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>tinyint(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
     </column>
-    <column id="377" parent="294" name="created_at">
+    <column id="377" parent="294" name="email_verified_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="378" parent="294" name="updated_at">
+    <column id="378" parent="294" name="remember_token">
       <Position>7</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="379" parent="294" name="created_at">
+      <Position>8</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <index id="379" parent="294" name="users_email_unique">
+    <column id="380" parent="294" name="updated_at">
+      <Position>9</Position>
+      <DataType>timestamp|0s</DataType>
+    </column>
+    <index id="381" parent="294" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="380" parent="294" name="PRIMARY">
+    <key id="382" parent="294" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="381" parent="294" name="users_email_unique">
+    <key id="383" parent="294" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>

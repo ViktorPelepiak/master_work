@@ -12,7 +12,7 @@
         @csrf
         <div class="form-group">
             <label for="email" class="col-form-label-lg">Ваш email</label>
-            <input class="form-control" id="email" name="email" type="text" value="" placeholder="Email">
+            <input class="form-control" id="email" name="email" type="email" value="" placeholder="Email">
             @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror

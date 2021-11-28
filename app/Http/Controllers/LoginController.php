@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use KeyValues;
 
 class LoginController extends Controller
 {
@@ -13,6 +15,14 @@ class LoginController extends Controller
         }
 
         $formFields = $request->only(['email', 'password']);
+
+        $user = User::where('email', $formFields['email'])->get();
+        if (count($user) > 0 and !$user[0]->enable){
+            return view('error', [
+                'errorMessage' => 'Вибачте, але цей користувач був заблокований адміністратором ресурсу.',
+                'root_path'=>KeyValues::getKeyValues()['root_path']
+            ]);
+        }
 
         if (Auth::attempt($formFields)){
             return redirect()->intended(route('user.private'));
@@ -29,6 +39,14 @@ class LoginController extends Controller
         }
 
         $formFields = $request->only(['email', 'password']);
+
+        $user = User::where('email', $formFields['email'])->get();
+        if (count($user) > 0 and !$user[0]->enable){
+            return view('error', [
+                'errorMessage' => 'Вибачте, але цей користувач був заблокований адміністратором ресурсу.',
+                'root_path'=>KeyValues::getKeyValues()['root_path']
+            ]);
+        }
 
         if (Auth::attempt($formFields)){
             return redirect()->intended(route('user.private'));

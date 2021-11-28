@@ -11,3 +11,7 @@ function login() {
 function mySurveys() {
     window.location = contextPath + "/private";
 }
+
+function userManagement() {
+    window.location = contextPath + "/admin/users";
+}

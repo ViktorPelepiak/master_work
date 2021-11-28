@@ -14,11 +14,18 @@ class RegistrationController extends Controller
         }
 
         $validateFields = $request->validate([
-            'email'=>'required',
+            'email'=>'required|email',
             'password'=>'required'
         ]);
 
-        $user = User::create($validateFields);
+        $data =  [
+            'email'=>$validateFields['email'],
+            'password'=>$validateFields['password'],
+            'role'=>'SUPER_ADMIN',
+            'enable'=>true
+        ];
+
+        $user = User::create($data);
 
         if($user){
             Auth::login($user);

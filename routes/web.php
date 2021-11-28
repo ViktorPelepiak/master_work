@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
@@ -72,3 +73,15 @@ Route::post('/surveys/vote', [SurveyController::class, 'saveAnswer'])->name('vot
 Route::post('/survey/delete/{id}', [SurveyController::class, 'deleteById'])->middleware('auth');
 
 Route::get('/survey/review/{id}', [SurveyController::class, 'getSurveyInfoById'])->middleware('auth');
+
+Route::name('admin.')->group(function (){
+    Route::get('/admin/users', [AdminController::class, 'getAllAdmins'])->middleware('auth')->name('users');
+
+    Route::post('/admin/users/new', [AdminController::class, 'addNewAdmin'])->middleware('auth')->name('newAdmin');
+
+    Route::post('/admin/user/disable/{id}', [AdminController::class, 'disableById'])->middleware('auth');
+
+    Route::post('/admin/user/enable/{id}', [AdminController::class, 'enableById'])->middleware('auth');
+
+    Route::post('/admin/user/delete/{id}', [AdminController::class, 'deleteAdminById'])->middleware('auth');
+});
