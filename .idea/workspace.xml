@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +197,7 @@
       <workItem from="1636925283376" duration="33771000" />
       <workItem from="1637774929419" duration="4166000" />
       <workItem from="1637779151254" duration="84782000" />
-      <workItem from="1638228763939" duration="13054000" />
+      <workItem from="1638228763939" duration="13449000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1637452036173</created>
@@ -306,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638665795214</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="hotfix">
+      <created>1639004023657</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1639004023657</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,6 +344,7 @@
     <MESSAGE value="- Updated main page&#10;- Implemented the question with many answer variant logic" />
     <MESSAGE value="- Updated header&#10;- Added possibility of new admins adding&#10;- Added validation for emails&#10;- Updated mail patterns" />
     <MESSAGE value="- Optimized to 3NF and to NFBK" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Optimized to 3NF and to NFBK" />
+    <MESSAGE value="hotfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfix" />
   </component>
 </project>
