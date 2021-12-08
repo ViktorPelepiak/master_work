@@ -132,7 +132,7 @@ class SurveyController extends Controller
 
             if ($survey->time_of_start > $currentTime) {
                 return view('error', [
-                    'errorMessage' => 'Голосування ще не розпочалося, спробуйте пізніше',
+                    'errorMessage' => 'Голосування ще не розпочалося, спробуйте пізніше.',
                     'root_path'=>KeyValues::getKeyValues()['root_path']
                 ]);
             } elseif ($survey->time_of_finish < $currentTime) {
