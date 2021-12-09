@@ -128,10 +128,14 @@ function displayAnswerContainer() {
 function deleteAnswerVariant(index) {
     answers.splice(index, 1);
     displayAnswerContainer();
+
+    document.getElementById("addAnswerVariant").disabled = false;
 }
 
 function prepareAddAnswerVariantModal() {
-    document.getElementById("newAnswerVariantInput").value = "";
+    var newAnswerVariantInput = document.getElementById("newAnswerVariantInput");
+    newAnswerVariantInput.value = "";
+    newAnswerVariantInput.focus();
 }
 
 function addAnswerVariant() {
@@ -140,11 +144,16 @@ function addAnswerVariant() {
         answers.push(newAnswerVariant);
         displayAnswerContainer();
     }
+    if (answers.length  === 10) {
+        document.getElementById("addAnswerVariant").disabled = true;
+    }
 }
 
 function prepareEditAnswerVariantModal(index) {
     document.getElementById("index").value = index;
-    document.getElementById("editAnswerVariantInput").value = answers[index];
+    var editAnswerVariantInput = document.getElementById("editAnswerVariantInput");
+    editAnswerVariantInput.value = answers[index];
+    editAnswerVariantInput.focus();
 }
 
 function editAnswerVariant() {

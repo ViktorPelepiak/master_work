@@ -26,7 +26,7 @@
             <label for="answerVariants" class="survey-form-label">Варіанти відповіді</label>
             <div id="answerVariants"></div>
             <div style="display: flex;">
-                <button type="button" class="btn btn-success btn-new-answer-variant" data-toggle="modal" onclick="prepareAddAnswerVariantModal()" data-target="#addAnswerModal">
+                <button id="addAnswerVariant" type="button" class="btn btn-success btn-new-answer-variant" data-toggle="modal" onclick="prepareAddAnswerVariantModal()" data-target="#addAnswerModal">
                     Додати варіант відповіді
                 </button>
             </div>
