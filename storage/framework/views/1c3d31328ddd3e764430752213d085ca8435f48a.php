@@ -53,6 +53,10 @@
         </div>
     </div>
 
+    <nav class="navbar fixed-bottom">
+        <button class="new-survey-btn" onclick="toVotingManagementPage()"><img class="back-arrow" src="/images/arrow-left.png" alt="Logo"></button>
+    </nav>
+
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="/js/statistic.js"></script>
 <?php $__env->stopSection(); ?>

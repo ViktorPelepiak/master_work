@@ -60,3 +60,6 @@ function drawChart() {
     }
 }
 
+function toVotingManagementPage() {
+    window.location.href = contextPath + "/private";
+}
