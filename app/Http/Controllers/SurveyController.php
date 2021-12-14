@@ -88,9 +88,14 @@ class SurveyController extends Controller
 
         $response = array();
         foreach ($surveys as $sur) {
+            $question = $sur->question;
+            if (strlen($question) > 18) {
+                $question = substr($question, 0, 15)."...";
+            }
+
             array_push($response, [
                 'survey_id'=>$sur->id,
-                'question'=>$sur->question,
+                'question'=>$question,
                 'start_time'=>$sur->time_of_start,
                 'finish_time'=>$sur->time_of_finish,
                 'review_in_process'=>$sur->review_in_process,
