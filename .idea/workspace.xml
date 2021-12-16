@@ -4,9 +4,6 @@
     <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +167,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -204,7 +202,8 @@
       <workItem from="1637774929419" duration="4166000" />
       <workItem from="1637779151254" duration="84782000" />
       <workItem from="1638228763939" duration="18749000" />
-      <workItem from="1639154267158" duration="17157000" />
+      <workItem from="1639154267158" duration="19803000" />
+      <workItem from="1639615444537" duration="4626000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1637452036173</created>
@@ -339,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639155735070</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Updated voting display format">
+      <created>1639492982981</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1639492982981</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,6 +381,7 @@
     <MESSAGE value="hotfix" />
     <MESSAGE value="limited answer variants by 10" />
     <MESSAGE value="Added back button for voting review page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added back button for voting review page" />
+    <MESSAGE value="Updated voting display format" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated voting display format" />
   </component>
 </project>

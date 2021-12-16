@@ -177,7 +177,7 @@ class SurveyController extends Controller
         $respondent->is_voted = true;
         $respondent->save();
 
-        return view('error', ['errorMessage' => 'Дякуємо! Ваша думка важлива для нас.', 'root_path'=>KeyValues::getKeyValues()['root_path']]);
+        return view('error', ['errorMessage' => 'Дякуємо! Ваш голос враховано.', 'root_path'=>KeyValues::getKeyValues()['root_path']]);
     }
 
     public function deleteById($id) {
