@@ -4,6 +4,7 @@
     <list default="true" id="40064a3c-3a8d-40fc-b461-21fd1cd1a33a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SurveyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/newVoteMail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/newVoteMail.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +204,7 @@
       <workItem from="1637779151254" duration="84782000" />
       <workItem from="1638228763939" duration="18749000" />
       <workItem from="1639154267158" duration="19803000" />
-      <workItem from="1639615444537" duration="4626000" />
+      <workItem from="1639615444537" duration="9847000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1637452036173</created>
@@ -345,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639492982981</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Updated success vote message">
+      <created>1639674385347</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1639674385347</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,6 +390,7 @@
     <MESSAGE value="limited answer variants by 10" />
     <MESSAGE value="Added back button for voting review page" />
     <MESSAGE value="Updated voting display format" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated voting display format" />
+    <MESSAGE value="Updated success vote message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated success vote message" />
   </component>
 </project>

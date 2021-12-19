@@ -8,8 +8,8 @@
     <title>Test</title>
 </head>
 <body style="width: 100%; text-align: center; font-size: 2rem;">
-<p>Вас запрошено до проходження голосування,</p>
+<p>Вас запрошено для проходження голосування,</p>
 <p>що буде проходити з&nbsp;{{ $details['datetime_of_start'] }}&nbsp;по&nbsp;{{ $details['datetime_of_finish'] }}.</p>
-<p>Віддати свій голос ви можете за <a href="{{ env('APP_URL').'/surveys/vote/'.$details['token'] }}">посиланням</a>.</p>
+<p>Віддати свій голос Ви можете за <a href="{{ env('APP_URL').'/surveys/vote/'.$details['token'] }}">посиланням</a>.</p>
 </body>
 </html>
